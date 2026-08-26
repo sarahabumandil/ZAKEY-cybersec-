@@ -1,58 +1,61 @@
-## (optional) Prerequisites 
+# pre-security-prep
 
-This course assumes you walk in with working fluency in three areas. If you don't have all three, spend ~10 hours preparing using the resources below before Week 1. We will not re-teach these topics in lecture.What you need to know
-Networking fundamentals. How traffic moves between machines.
+Prep repo for the "3 areas of assumed fluency" before Week 1: **Networking**,
+**Linux**, and **Windows/Active Directory**. Budget ~10 hours total, spread
+over 1–2 weeks — not crammed the night before.
 
-• IP addresses and ports — how machines identify themselves and listen for connections
-• DNS — how domain names become IPs (A records, CNAME, resolvers)
-• HTTP/HTTPS — request structure (methods, headers, status codes), and what TLS adds on top
-• LAN vs. public internet, NAT, and basic routing concepts
-• How web applications work
+## Structure
 
-Linux fundamentals. Comfort at the command line.
+```
+pre-security-prep/
+├── README.md                  <- you are here
+├── self-check-answers.md      <- the 5 gate questions, answered + explained
+├── networking/notes.md        <- IP/ports, DNS, HTTP/HTTPS, LAN/NAT/routing
+├── linux/notes.md             <- filesystem, files, perms, processes, pipes
+└── windows-ad/notes.md        <- users/groups/NTFS, registry, services, PowerShell
+```
 
-• Filesystem layout (/etc, /var/log, /home), navigation (cd, ls, pwd)
-• Reading and editing files (cat, less, nano or vim)
-• Permissions (chmod, chown), processes (ps, kill), basic networking (ping, curl, ss)
-• Pipes and redirection (|, >, >>)
+## How to use this
 
-Windows and Active Directory fundamentals. Working knowledge of the OS most enterprises run.
+1. Read `self-check-answers.md` FIRST, cold, without looking at your notes.
+   Time yourself — 30 seconds per question. Whatever you miss tells you
+   which folder to actually spend time in.
+2. For each weak area, go to that folder's `notes.md`. Each file is a
+   condensed reference, not a replacement for the hands-on labs below —
+   it's there so you have something to check your work against while
+   you're in the labs.
+3. Do the labs. Reading is not doing. The muscle memory is the point.
 
-• Users, groups, and NTFS permissions
-• The Registry and where common settings live
-• Services, scheduled tasks, and Task Manager
-• PowerShell basics (Get-* cmdlets, the pipeline) — read-only competence is fine
+## Required labs (free)
 
-Self-check
-If you can answer each of these in under 30 seconds without looking anything up, you're ready:
+| Topic | Link |
+|---|---|
+| Linux CLI basics | https://app.cybrary.it/browse/virtual-lab/linux-cli-basics |
+| HTTP in Detail | https://tryhackme.com/room/httpindetail |
+| Web Application Basics | https://tryhackme.com/room/webapplicationbasics |
+| DNS in Detail | https://tryhackme.com/room/dnsindetail |
+| Intro to LAN | https://tryhackme.com/room/introtolan |
+| Networking Basics (YouTube) | https://www.youtube.com/watch?v=3QhU9jd03a0 |
 
+**If a TryHackMe room is gated behind premium when you get to it:** report it
+to the instructional team, then fall back to Microsoft Learn (Windows),
+Linux Foundation free intro courses (Linux), or Cloudflare Learning Center
+(web/networking) for that topic.
 
-• What's the difference between TCP port 80 and 443, and what protocol speaks on each?
-• In Linux, how do you find which process is listening on a given port?
-• In Windows, how do you list scheduled tasks from PowerShell?
-• What does a DNS resolver return for an A-record query, and how is that different from a CNAME?
-• What does chmod 755 mean in plain English?
+## Common mistakes to avoid
 
+- **Watching instead of doing.** Skimming the reading and skipping lab
+  tasks means the muscle memory won't be there in Week 4 (web app security)
+  or Week 6 (endpoint forensics).
+- **"I'm a developer, I've got this."** Devs are often weaker on the OS/
+  networking side than they think. Actually run the self-check — don't
+  assume.
+- **Cramming the night before.** These topics compound on each other.
+  Spread it out.
 
+## Suggested time split (~10 hours)
 
-If two or more give you trouble, prep before Week 1.
-
-How to prepare (free)
-The TryHackMe, Cybrary, and YouTube covers everything you need. We will keep this browser-based, hands-on, and structured.
-Required for this course:
-
-• https://app.cybrary.it/browse/virtual-lab/linux-cli-basics
-• https://tryhackme.com/room/httpindetail
-• https://tryhackme.com/room/webapplicationbasics
-• https://tryhackme.com/room/dnsindetail
-• https://tryhackme.com/room/introtolan
-• https://www.youtube.com/watch?v=3QhU9jd03a0 (Networking basics)
-
-Heads-up on premium TryHackMe rooms
-TryHackMe periodically moves previously-free rooms behind a paid subscription. We will need to keep an eye on this. Please report to instructional team if a room becomes premium/paid only.
-If any other room is gated when you reach it, the topic is well covered by free Microsoft Learn docs (Windows), the Linux Foundation's free intro courses (Linux), and Cloudflare's learning center (web/networking).
-Common mistakes
-
-• Watching, not doing. Pre-Security is hands-on for a reason. If you skim the reading and skip the lab tasks, the muscle memory won't transfer to Week 4 (web app security) or Week 6 (endpoint forensics).
-• Assuming "I'm a developer" covers it. Developers often have weaker fundamentals on the OS and networking side than they think. Run the self-check.
-• Cramming the night before. These topics compound. Spread the prep over 1–2 weeks.
+- Networking: ~4 hrs (DNS, HTTP, LAN room + video)
+- Linux: ~3 hrs (Cybrary lab + practicing on any Linux box/VM/WSL you have)
+- Windows/AD: ~3 hrs (Microsoft Learn reading + poking around a VM's
+  Task Scheduler, Services, Registry, and PowerShell `Get-*` cmdlets)
